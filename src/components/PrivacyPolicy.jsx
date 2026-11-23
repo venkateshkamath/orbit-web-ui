@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
@@ -309,6 +310,10 @@ function renderLine(line, key) {
 }
 
 export default function PrivacyPolicy() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="privacy-policy-wrapper">
       <header className="privacy-policy-header container">

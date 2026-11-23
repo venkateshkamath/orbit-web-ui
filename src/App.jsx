@@ -1,32 +1,33 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
-} from "react-router-dom";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+} from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Components
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Features from "./components/Features";
-import Gallery from "./components/Gallery";
-import HowItWorks from "./components/HowItWorks";
-import Community from "./components/Community";
-import FAQ from "./components/FAQ";
-import Waitlist from "./components/Waitlist";
-import Footer from "./components/Footer";
-import WaitlistModal from "./components/WaitlistModal";
-import Dashboard from "./components/Dashboard";
-import Login from "./components/Login";
-import NotFound from "./components/NotFound";
-import PrivacyPolicy from "./components/PrivacyPolicy";
-import Feedback from "./components/Feedback";
-import FeedbackDetail from "./components/FeedbackDetail";
-import DiscoverMap from "./components/DiscoverMap";
-import EventShare from "./components/EventShare";
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Gallery from './components/Gallery';
+import HowItWorks from './components/HowItWorks';
+import Community from './components/Community';
+import FAQ from './components/FAQ';
+import Waitlist from './components/Waitlist';
+import Footer from './components/Footer';
+import WaitlistModal from './components/WaitlistModal';
+import Dashboard from './components/Dashboard';
+import Login from './components/Login';
+import NotFound from './components/NotFound';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import ChildSafety from './components/ChildSafety';
+import Feedback from './components/Feedback';
+import FeedbackDetail from './components/FeedbackDetail';
+import DiscoverMap from './components/DiscoverMap';
+import EventShare from './components/EventShare';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,10 +35,10 @@ function LandingPage({ onJoinWaitlist }) {
   useEffect(() => {
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", (e) => {
+      anchor.addEventListener('click', (e) => {
         e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute("href"));
-        if (target) target.scrollIntoView({ behavior: "smooth" });
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
     });
 
@@ -73,9 +74,9 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingPage onJoinWaitlist={openModal} />} />
+        <Route path='/' element={<LandingPage onJoinWaitlist={openModal} />} />
         <Route
-          path="/orbit-admin"
+          path='/orbit-admin'
           element={
             isAuthenticated ? (
               <Dashboard />
@@ -86,15 +87,16 @@ export default function App() {
         />
         {/* Redirect old dashboard link to admin */}
         <Route
-          path="/dashboard"
-          element={<Navigate to="/orbit-admin" replace />}
+          path='/dashboard'
+          element={<Navigate to='/orbit-admin' replace />}
         />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/feedback" element={<Feedback />} />
-        <Route path="/feedback/:id" element={<FeedbackDetail />} />
-        <Route path="/event/:id" element={<EventShare />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+        <Route path='/child-safety' element={<ChildSafety />} />
+        <Route path='/feedback' element={<Feedback />} />
+        <Route path='/feedback/:id' element={<FeedbackDetail />} />
+        <Route path='/event/:id' element={<EventShare />} />
         {/* Catch-all 404 Route */}
-        <Route path="*" element={<NotFound />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <WaitlistModal isOpen={isModalOpen} onClose={closeModal} />
     </Router>
