@@ -1,0 +1,64 @@
+/* Extends PrivacyPolicy.css. Uses currentColor so it works in light and dark themes. */
+
+.child-safety-callout {
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid currentColor;
+  background: color-mix(in srgb, currentColor 7%, transparent);
+  border-radius: 0 8px 8px 0;
+}
+
+.child-safety-callout p {
+  margin: 0.35rem 0 0;
+}
+
+.child-safety-subheading {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.child-safety-list {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.child-safety-list li {
+  margin-bottom: 0.4rem;
+}
+
+.child-safety-steps {
+  margin: 0.75rem 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.child-safety-steps li {
+  margin-bottom: 0.6rem;
+  padding-left: 0.25rem;
+}
+
+.child-safety-steps strong {
+  display: block;
+}
+
+.child-safety-note {
+  padding: 0.75rem 1rem;
+  border-left: 3px solid currentColor;
+  background: color-mix(in srgb, currentColor 7%, transparent);
+  border-radius: 0 8px 8px 0;
+}
+
+.child-safety-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin: 0.75rem 0 1rem;
+  padding: 1rem 1.25rem;
+  font-style: normal;
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  border-radius: 8px;
+}
+
+.privacy-policy-article a {
+  overflow-wrap: anywhere;
+}
